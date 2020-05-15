@@ -53,7 +53,7 @@ remote repository. If your code is not up to the standard then the push will be 
 
 To use this here is what you need to do:
 1. Copy `pre-push.sample` into your `project/.git/hooks`
-2. Copy `pre-push.sample` and rename it to `pre-push`
+2. Rename it to `pre-push`
 3. You might need to modify the alias matlab line below to point this script to where matlab is on your computer.
 4. Make this file executable by running `chmod +x .git/hooks/pre-push`
 5. Now your code quality will be checked if when you push your code
