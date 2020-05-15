@@ -41,6 +41,7 @@ if recursive
     % this will look recursively into all the subfolders
     m_file_ls = dir(fullfile(pwd, '**', '*.m'));
 else
+    % this will look only in the current directory
     m_file_ls = dir('*.m');
 end
 
@@ -63,6 +64,8 @@ for ifile = 1:numel(m_file_ls)
     
 end
 
+% we actually check that the percentage of comments and the code complexity
+% meets the requirements
 fprintf(1,'\n')
 fprintf(1,'\n-----------------------------------------------------------------------------------\n')
 fprintf(1,'\n                              CHECK_MY_CODE REPORT                                 \n')
