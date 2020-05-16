@@ -12,6 +12,31 @@ you in 6 months).
 In case you want to avoid this, this function can help you files that are getting too complex or
 have too few comments.
 
+<!-- TOC -->
+
+- [matlab_checkcode](#matlab_checkcode)
+  - [McCabe complexity](#mccabe-complexity)
+  - [check_my_code](#check_my_code)
+    - [INPUTS](#inputs)
+      - [recursive](#recursive)
+      - [cplx_thrs](#cplx_thrs)
+      - [comment_thres](#comment_thres)
+      - [print_file](#print_file)
+    - [OUPUTS](#ouputs)
+      - [error_code](#error_code)
+      - [file_function](#file_function)
+      - [cplx : 1 X 2 ARRAY](#cplx--1-x-2-array)
+      - [percentage_comment](#percentage_comment)
+  - [Installation](#installation)
+    - [Requirements](#requirements)
+    - [Direct download](#direct-download)
+    - [Git](#git)
+    - [matlab package manager](#matlab-package-manager)
+  - [Implementation detail](#implementation-detail)
+  - [Automation](#automation)
+
+<!-- /TOC -->
+
 ## McCabe complexity
 
 The McCabe complexity of a function is presents how many paths one can take while navigating through
