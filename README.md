@@ -58,6 +58,8 @@ In general you might want to try to be around 20%.
 It will then list the functions that do not meet the requirements you have set for your projects.
 You can then use this information to figure out which function you should refactor first.
 
+The idea for this is partly inspired by this "equivalent" in python: https://github.com/PyCQA/mccabe
+
 ### INPUTS
 
 #### recursive
