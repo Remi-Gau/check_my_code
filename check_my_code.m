@@ -190,12 +190,12 @@ else
 
             % store the complexity of this function
             cplx(end+1) = str2double(msg(iMsg).message(idx_2+4:end-1));
+            
+            % in case the file is empty
+            if isnan(cplx(end))
+                cplx(end) = 0;
+            end
 
-        end
-
-        % in case the file is empty
-        if isnan(cplx(end))
-            cplx(end) = 0;
         end
 
     end
