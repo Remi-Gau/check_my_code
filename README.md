@@ -69,7 +69,39 @@ BOOLEAN this will print a file with the overall error code ; mostly used for aut
 
 ## Installation
 
-You can then use the [matlab package manager](https://github.com/mobeets/mpm), to simply download
+### Requirements
+
+Some aspects of this function will require Matlab 2017a (recursive search through sub-folders) or above to work.
+
+Also because octave does not have a linter, so this will only work with matlab.
+
+Any help is welcome to make this available to older Matlab version or to implement it in octave.
+
+### Direct download
+
+Click on the `Clone or download` button and then on `Download ZIP`. Unzip the downloaded file and add the content of the zipped folder to your matlab path.
+
+### Git
+
+If you use Git you can get this repository by typing this in a terminal:
+
+```
+git clone https://github.com/Remi-Gau/matlab_checkcode.git
+
+```
+
+Otherwise you could fork this repository onto your github account by clikcing the `fork` on the top right of the screen and then clone that copy onto your computer by typing.
+
+```
+git clone https://github.com/YOUR_GITHUB_USERNAME/matlab_checkcode.git
+
+```
+
+In either case you will then need to add the newly created folder to your matlab path.
+
+### matlab package manager
+
+If you use the [matlab package manager](https://github.com/mobeets/mpm), to simply download
 this repository by typing this in the matlab prompt:
 
 ```
@@ -86,14 +118,6 @@ all the little other issues in your code that you have not told matlab to ignore
 
 Also because octave does not have a linter, so this will only work with matlab. 😭
 
-## Requirements
-
-This function will require Matlab 2017a or above to work.
-
-Also because octave does not have a linter, so this will only work with matlab.
-
-Any help is welcome to make this available to older Matlab version or to implement it in octave.
-
 ## Automation
 
 If the `check_my_code` function is in the matlab path, you can automate its usage if you use Git for your project.
@@ -104,6 +128,6 @@ remote repository. If your code is not up to the standard then the push will be 
 To use this here is what you need to do:
 1. Copy `pre-push.sample` into your `project/.git/hooks`
 2. Rename it to `pre-push`
-3. You might need to modify the alias matlab line below to point this script to where matlab is on your computer.
+3. You might need to modify the `alias matlab` line to point this script to where matlab is on your computer.
 4. Make this file executable by running `chmod +x .git/hooks/pre-push`
 5. Now your code quality will be checked if when you push your code
