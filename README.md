@@ -49,7 +49,7 @@ danger zone. If you are above 15 you might seriously reconsider
 
 ## check_my_code
 
-It is function that will give you the The McCabe complexity of all the `.m` files in a folder.
+It is function that will give you the The McCabe complexity of all the `.m` files in the current directory.
 It will also return the complexity of the sub-functions in each file.
 
 This function checks the proportion of lines with comments in each file (might overestimate it).
@@ -62,7 +62,7 @@ You can then use this information to figure out which function you should refact
 
 #### recursive
 
-BOOLEAN: if set to true this will check the .m files in all the subfolders. (default: false)
+BOOLEAN: if set to true this will check the `.m` files in all the sub-folders. (default: false)
 
 #### cplx_thrs
 
