@@ -2,7 +2,7 @@
 
 # Things you need to do
 # 1. Copy this file into your project/.git/hooks
-# 2. Copy pre-push.sample and rename it to pre-push
+# 2. rename it to pre-push
 # 3. You might need to modify the `alias matlab` line below to point this script to where matlab is
 #     on your computer.
 # 4. Make this file executable with `chmod +x .git/hooks/pre-push`

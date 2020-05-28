@@ -87,12 +87,18 @@ BOOLEAN this will print a file with the overall error code ; mostly used for aut
 ### OUPUTS
 
 #### error_code
+an array wth [cplx_error_code comment_error_code] where each value is 0 if there is no file that
+is too complex or has too few comments and is 1 otherwise
 
 #### file_function
+a n X 2 cell listing of all the function in {i,1} and subfunction in {i,2} tested. If the function is
+the main function of a file then {i,1} and {i,2} are the same.
 
-#### cplx : 1 X 2 ARRAY
+#### cplx
+an array with the complexity of each function and subfunction
 
 #### percentage_comment
+an array with the percentage of comment in each file
 
 ## Installation
 
@@ -153,8 +159,9 @@ I have created a git hook that will execute the `check_my_code` every time you t
 remote repository. If your code is not up to the standard then the push will be aborted.
 
 To use this here is what you need to do:
-1. Copy `pre-push.sample` into your `project/.git/hooks`
-2. Rename it to `pre-push`
-3. You might need to modify the `alias matlab` line to point this script to where matlab is on your computer.
-4. Make this file executable by running `chmod +x .git/hooks/pre-push`
-5. Now your code quality will be checked if when you push your code
+1. Copy this file into your project/.git/hooks
+2. rename it to pre-push
+3. You might need to modify the `alias matlab` line below to point this script to where matlab is
+    on your computer.
+4. Make this file executable with `chmod +x .git/hooks/pre-push`
+5. Now your code quality will be checked when you push your code to your remote.

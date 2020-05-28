@@ -34,12 +34,18 @@ function [error_code, file_function, cplx, percentage_comment] = check_my_code(r
 % ### OUPUTS
 %
 % #### error_code
+% an array wth [cplx_error_code comment_error_code] where each value is 0 if there is no file that
+% is too complex or has too few comments and is 1 otherwise
 %
 % #### file_function
+% a n X 2 cell listing of all the function in {i,1} and subfunction in {i,2} tested. If the function is
+% the main function of a file then {i,1} and {i,2} are the same.
 %
-% #### cplx : 1 X 2 ARRAY
+% #### cplx
+% an array with the complexity of each function and subfunction
 %
 % #### percentage_comment
+% an array with the percentage of comment in each file
 %
 % ## IMPLEMENTATION
 %
@@ -190,7 +196,7 @@ else
 
             % store the complexity of this function
             cplx(end+1) = str2double(msg(iMsg).message(idx_2+4:end-1));
-            
+
             % in case the file is empty
             if isnan(cplx(end))
                 cplx(end) = 0;
