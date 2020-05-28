@@ -2,15 +2,20 @@
 
 _Because we all need pointers when it comes to make our codebase better._
 
-A lot of us (at least in neuroscience) learn matlab by aping scripts we have borrowed from someone.
-Since the people we take the code from are as likely as you to have taken
-'How to write good code 101' (i.e very unlikely but don't feel bad those classes are usually not
-proposed in most neuroscience departments anyway), this is the fastest way to end with
-matlab scripts of 1000 lines or above that are a nightmare to debug or to read (for others or for
-you in 6 months).
+A lot of us (at least in neuroscience) learn matlab by aping scripts we have borrowed from someone:
+one day you were given some .m files, a tap on the shoulder and "good luck" and you have been reverse
+engineering the wheel on what it means to write good code since then.
 
-In case you want to avoid this, this function can help you files that are getting too complex or
-have too few comments.
+One of the reason for this is that people, whose code we are learning from, are as likely as you to have taken
+'How to write good code 101' (i.e very unlikely but don't feel bad those classes are usually not
+proposed in most neuroscience departments anyway).
+
+All of this is the fastest way to end with a codebase of matlab scripts of 1000 lines or above that
+that have more loose ends than a bowl of spaghetti and are a nightmare to debug or to read
+(for others or for you in 6 months).
+
+In case you want to avoid this, this function can help you by pointing the files that are getting
+too complex or have too few comments.
 
 <!-- TOC -->
 
@@ -41,8 +46,8 @@ have too few comments.
 
 The McCabe complexity of a function is presents how many paths one can take while navigating through
 the conditional statements of your function (`if`, `switch`, ...). If it gets above 10 you enter the
-danger zone. If you are above 15 you might seriously reconsider
-[refactor](https://en.wikipedia.org/wiki/Code_refactoring) your code with sub-functions for example.
+danger zone. If you are above 15 you want to seriously consider
+[refactoring](https://en.wikipedia.org/wiki/Code_refactoring) your code with sub-functions for example.
 
 -   [refactoring.com](https://refactoring.com/)
 -   [refactoring.guru](https://refactoring.guru/refactoring)
@@ -58,7 +63,7 @@ In general you might want to try to be around 20%.
 It will then list the functions that do not meet the requirements you have set for your projects.
 You can then use this information to figure out which function you should refactor first.
 
-The idea for this is partly inspired by this "equivalent" in python: https://github.com/PyCQA/mccabe
+The idea for this is partly inspired by this "equivalent" in [python](https://github.com/PyCQA/mccabe)
 
 ### INPUTS
 
@@ -70,14 +75,14 @@ BOOLEAN: if set to true this will check the `.m` files in all the sub-folders. (
 
 1 X 2 ARRAY: Thresholds for the acceptable McCabe complexity before triggering a warning.
 Having 2 values lets you decide a zone of complexity that is high but acceptable and another that is
-too high. (default: [15 20])
+too high. (default: `[15 20]`)
 
 #### comment_thres
 
 1 X 2 ARRAY : thresholds for the acceptable percentage of comments in a file
     before triggering a warning.
     Having 2 values lets you decide levels that are low but acceptable and another that is
-    too low. (default: [20 10])
+    too low. (default: `[20 10]`)
 
 #### print_file
 
@@ -87,7 +92,7 @@ BOOLEAN this will print a file with the overall error code ; mostly used for aut
 ### OUPUTS
 
 #### error_code
-an array wth [cplx_error_code comment_error_code] where each value is 0 if there is no file that
+an array wth `[cplx_error_code comment_error_code]` where each value is 0 if there is no file that
 is too complex or has too few comments and is 1 otherwise
 
 #### file_function
@@ -152,6 +157,8 @@ all the little other issues in your code that you have not told matlab to ignore
 Also because octave does not have a linter, so this will only work with matlab. 😭
 
 ## Automation
+
+_Because we don't brush our teeth just the day before we go to the dentist._
 
 If the `check_my_code` function is in the matlab path, you can automate its usage if you use Git for your project.
 
