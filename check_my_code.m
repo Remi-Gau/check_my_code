@@ -66,7 +66,7 @@ if nargin<3 || isempty(comment_thres)
 end
 
 if nargin<4 || isempty(print_file)
-    print_file = true;
+    print_file = false;
 end
 
 % initialize
