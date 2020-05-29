@@ -54,10 +54,15 @@ danger zone. If you are above 15 you want to seriously consider
 
 ## check_my_code
 
-It is function that will give you the The McCabe complexity of all the `.m` files in the current directory.
+Once you have downloaded (or clones) this repository and added its content to the matlab path (see
+[here](#installation)), you can use the function any time by typing this in the matlab prompt:
+```matlab
+check_my_code
+```
+That will give you the The McCabe complexity of all the `.m` files in the current directory.
 It will also return the complexity of the sub-functions in each file.
 
-This function checks the proportion of lines with comments in each file (might overestimate it).
+This will also check the proportion of lines with comments in each file (might overestimate it).
 In general you might want to try to be around 20%.
 
 It will then list the functions that do not meet the requirements you have set for your projects.
