@@ -36,7 +36,7 @@ matlab -nojvm -nosplash -r "if exist('check_my_code', 'file')==2 ; check_my_code
 
 [ -s "$report_file" ]
 
-if [ "$?" = "0" ]; then
+if [ "$?" = "0 0" ]; then
 
   echo "\n\n🚧 🚧 🚧 You can't push until your code been properly cleaned. 🚧 🚧 🚧\n\n"
 

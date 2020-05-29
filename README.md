@@ -154,7 +154,7 @@ make this permanent or run `mpm init` next time your start matlab.
 It relies on the linter used natively by matlab so it could also be extended to check all the messages relating to
 all the little other issues in your code that you have not told matlab to ignore.
 
-Also because octave does not have a linter, so this will only work with matlab. 😭
+Also because octave does not have a linter, this will only work with matlab. 😭
 
 ## Automation
 
@@ -167,8 +167,8 @@ remote repository. If your code is not up to the standard then the push will be 
 
 To use this here is what you need to do:
 1. Copy this file into your project/.git/hooks
-2. rename it to pre-push
-3. You might need to modify the `alias matlab` line below to point this script to where matlab is
+2. Rename it to pre-push
+3. You might need to modify the `alias matlab` line to point this script to where matlab is
     on your computer.
 4. Make this file executable with `chmod +x .git/hooks/pre-push`
 5. Now your code quality will be checked when you push your code to your remote.
