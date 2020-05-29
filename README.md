@@ -1,4 +1,4 @@
-# matlab_checkcode
+# check_my_code
 
 _Because we all need pointers when it comes to make our codebase better._
 
