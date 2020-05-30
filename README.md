@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3866174.svg)](https://doi.org/10.5281/zenodo.3866174)
+
 # check_my_code
 
 _Because we all need pointers when it comes to make our codebase better._
