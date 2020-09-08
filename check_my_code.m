@@ -94,6 +94,13 @@ function [error_code, file_function, cplx, percentage_comment] = check_my_code(R
     else
         % this will look only in the current directory
         m_file_ls = dir('*.m');
+        if verLessThan('matlab', '9.2')
+            % Trying to add the 'folder' field which is missing
+            m_file_ls(end).folder = [];
+            for ifile = 1:numel(m_file_ls)
+                m_file_ls(ifile).folder = pwd;
+            end
+        end
     end
 
     for ifile = 1:numel(m_file_ls)
@@ -273,8 +280,9 @@ function cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS)
     if ~isempty(warning_cplx)
 
         for ifile = 1:numel(warning_cplx)
-            fprintf('\nthe function\t%s\n\tin the file %s', ....
+            fprintf('\nthe function\t%s\t, cplx : %d\n\tin the file %s', ....
                 file_function{ warning_cplx(ifile), 2 }, ...
+                cplx(warning_cplx(ifile)), ...
                 file_function{ warning_cplx(ifile), 1 });
         end
 
@@ -288,8 +296,9 @@ function cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS)
     if ~isempty(error_cplx)
 
         for ifile = 1:numel(error_cplx)
-            fprintf('\nthe function\t%s\n\tin the file %s', ....
+            fprintf('\nthe function\t%s\t, cplx : %d\n\tin the file %s', ....
                 file_function{ error_cplx(ifile), 2 }, ...
+                cplx(error_cplx(ifile)), ...
                 file_function{ error_cplx(ifile), 1 });
         end
 
