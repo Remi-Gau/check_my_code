@@ -4,7 +4,7 @@
 
 _Because we all need pointers when it comes to make our codebase better._
 
-A lot of us (at least in neuroscience) learn matlab by aping scripts we have borrowed from someone:
+A lot of us (at least in neuroscience) learn Matlab by aping scripts we have borrowed from someone:
 one day you were given some .m files, a tap on the shoulder and "good luck" and you have been reverse
 engineering the wheel on what it means to write good code since then.
 
@@ -12,7 +12,7 @@ One of the reason for this is that people, whose code we are learning from, are 
 'How to write good code 101' (i.e very unlikely but don't feel bad those classes are usually not
 proposed in most neuroscience departments anyway).
 
-All of this is the fastest way to end with a codebase of matlab scripts of 1000 lines or above that
+All of this is the fastest way to end with a codebase of Matlab scripts of 1000 lines or above that
 that have more loose ends than a bowl of spaghetti and are a nightmare to debug or to read
 (for others or for you in 6 months).
 
@@ -56,8 +56,8 @@ danger zone. If you are above 15 you want to seriously consider
 
 ## check_my_code
 
-Once you have downloaded (or clones) this repository and added its content to the matlab path (see
-[here](#installation)), you can use the function any time by typing this in the matlab prompt:
+Once you have downloaded (or clones) this repository and added its content to the Matlab path (see
+[here](#installation)), you can use the function any time by typing this in the Matlab prompt:
 ```matlab
 check_my_code
 ```
@@ -118,13 +118,13 @@ an array with the percentage of comment in each file
 
 Some aspects of this function will require Matlab 2017a (recursive search through sub-folders) or above to work.
 
-Also because octave does not have a linter, so this will only work with matlab.
+Also because octave does not have a linter, so this will only work with Matlab.
 
 Any help is welcome to make this available to older Matlab version or to implement it in octave.
 
 ### Direct download
 
-Click on the `Clone or download` button and then on `Download ZIP`. Unzip the downloaded file and add the content of the zipped folder to your matlab path.
+Click on the `Clone or download` button and then on `Download ZIP`. Unzip the downloaded file and add the content of the zipped folder to your Matlab path.
 
 ### Git
 
@@ -147,27 +147,27 @@ In either case you will then need to add the newly created folder to your matlab
 ### matlab package manager
 
 If you use the [matlab package manager](https://github.com/mobeets/mpm), to simply download
-this repository by typing this in the matlab prompt:
+this repository by typing this in the Matlab prompt:
 
 ```
 mpm install matlab_checkcode -u https://github.com/Remi-Gau/matlab_checkcode.git
 ```
 
-This will add `check_my_code` to the matlab path, but you will have to save the path if you want to
+This will add `check_my_code` to the Matlabpath, but you will have to save the path if you want to
 make this permanent or run `mpm init` next time your start matlab.
 
 ## Implementation detail
 
-It relies on the linter used natively by matlab so it could also be extended to check all the messages relating to
-all the little other issues in your code that you have not told matlab to ignore.
+It relies on the linter used natively by Matlab so it could also be extended to check all the messages relating to
+all the little other issues in your code that you have not told Matlabt o ignore.
 
-Also because octave does not have a linter, this will only work with matlab. 😭
+Also because octave does not have a linter, this will only work with Matlab. 😭
 
 ## Automation
 
 _Because we don't brush our teeth just the day before we go to the dentist._
 
-If the `check_my_code` function is in the matlab path, you can automate its usage if you use Git for your project.
+If the `check_my_code` function is in the Matlab path, you can automate its usage if you use Git for your project.
 
 I have created a git hook that will execute the `check_my_code` every time you try to push to your
 remote repository. If your code is not up to the standard then the push will be aborted.
@@ -175,7 +175,7 @@ remote repository. If your code is not up to the standard then the push will be 
 To use this here is what you need to do:
 1. Copy this file into your project/.git/hooks
 2. Rename it to pre-push
-3. You might need to modify the `alias matlab` line to point this script to where matlab is
+3. You might need to modify the `alias matlab` line to point this script to where Matlab is
     on your computer.
 4. Make this file executable with `chmod +x .git/hooks/pre-push`
 5. Now your code quality will be checked when you push your code to your remote.
