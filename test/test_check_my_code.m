@@ -1,3 +1,5 @@
+% (C) Copyright 2019 check_my_code developpers
+
 function test_check_my_code()
 
     pth = fileparts(mfilename('fullpath'));

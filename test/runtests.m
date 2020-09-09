@@ -1,12 +1,12 @@
+% (C) Copyright 2019-2020 Guillaume Flandin, Wellcome Centre for Human Neuroimaging
+% (C) Copyright 2020 BIDS-matlab developers
+
 function results = runtests(pth)
     % Run tests
     % List all the 'test_*.m' files located in the same directory as this
     % function, run them and keep track of how many passed, failed or are
     % incomplete.
     % __________________________________________________________________________
-
-    % Copyright (C) 2019, Guillaume Flandin, Wellcome Centre for Human Neuroimaging
-    % Copyright (C) 2020--, BIDS-matlab developers
 
     % -Get the path of where this file is located
     if ~nargin
