@@ -1,3 +1,5 @@
+% (C) Copyright 2019 check_my_code developpers
+
 function varargout = check_my_code(RECURSIVE, CPLX_THRS, COMMENT_THRS, PRINT_FILE)
     % [error_code, file_function, cplx, percentage_comment] = check_my_code(...
     %                                                              RECURSIVE, ...
@@ -137,14 +139,14 @@ function varargout = check_my_code(RECURSIVE, CPLX_THRS, COMMENT_THRS, PRINT_FIL
     fprintf(1, '\n-----------------------------------------------------------------------\n');
     fprintf(1, '\n');
 
-    cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS);
-
     comment_error_code = report_comments(m_file_ls, percentage_comment, COMMENT_THRS);
+
+    cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS);
 
     error_code = [cplx_error_code comment_error_code];
 
     if ~any(error_code)
-        fprintf(1, '\n                 CONGRATULATIONS: YOUR CODE IS CLEAN                   \n');
+        fprintf(1, '\n               CONGRATULATIONS: YOUR CODE IS CLEAN                 \n');
     end
 
     fprintf(1, '\n-----------------------------------------------------------------------\n');
@@ -159,6 +161,67 @@ function varargout = check_my_code(RECURSIVE, CPLX_THRS, COMMENT_THRS, PRINT_FIL
     end
 
     varargout = {error_code, file_function, cplx, percentage_comment};
+
+end
+
+function  m_file_ls = get_rec_file_ls(pth)
+    % this returns the list of .m files in designated folder as well as
+    % those from the sub-folders in a recursive way, which is not returned
+    % by the 'dir' command in older Matlab versions.
+
+    % start by get the current folder .m files and list of subfolders
+    [m_file_ls, dir_ls] = get_file_ls(pth);
+    n_subfs = size(dir_ls, 1);
+
+    % check the subfolders
+    if n_subfs
+        for isubf = 1:n_subfs
+            pth_subf = fullfile(pth, deblank(dir_ls(isubf, :)));
+            m_file_lsubf = get_rec_file_ls(pth_subf);
+            m_file_ls = [m_file_ls; m_file_lsubf];
+        end
+    end
+end
+
+function [m_file_ls, dir_ls] = get_file_ls(pth)
+    % this returns the list of .m files in designated folder, including the
+    % folder name, which is not returned by the 'dir' command in older
+    % Matlab versions.
+    % if requested, it also returns the list of subfolders, which is useful
+    % for recursive folder-digging in older Matlab versions.
+
+    m_file_ls = dir(fullfile(pth, '*.m'));
+
+    % adding the 'folder' field which is missing, if there are some files
+    if size(m_file_ls, 1) > 0
+
+        m_file_ls(end).folder = [];
+
+        for ifile = 1:numel(m_file_ls)
+            m_file_ls(ifile).folder = pth;
+        end
+
+    else
+        m_file_ls = [];
+
+    end
+
+    % look for subfolders
+    if nargout == 2
+
+        % get list of all 'subfolders'
+        tmp_ls = dir(pth);
+        dir_ls = char(tmp_ls([tmp_ls.isdir]).name);
+
+        % remove those starting with a '.'
+        dir_ls(strcmp(cellstr(dir_ls(:, 1)), '.'), :) = [];
+
+    end
+end
+
+function filename = create_filename(m_file_ls, idx)
+
+    filename = fullfile(m_file_ls(idx).folder, m_file_ls(idx).name);
 
 end
 
@@ -324,56 +387,4 @@ function cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS)
 
     end
 
-end
-
-function filename = create_filename(m_file_ls, idx)
-    filename = fullfile(m_file_ls(idx).folder, m_file_ls(idx).name);
-end
-
-function [m_file_ls, dir_ls] = get_file_ls(pth)
-    % this returns the list of .m files in designated folder, including the
-    % folder name, which is not returned by the 'dir' command in older
-    % Matlab versions.
-    % if requested, it also returns the list of subfolders, which is useful
-    % for recursive folder-digging in older Matlab versions.
-
-    m_file_ls = dir(fullfile(pth, '*.m'));
-
-    % adding the 'folder' field which is missing, if there are some files
-    if size(m_file_ls, 1) > 0
-        m_file_ls(end).folder = [];
-        for ifile = 1:numel(m_file_ls)
-            m_file_ls(ifile).folder = pth;
-        end
-    else
-        m_file_ls = [];
-    end
-
-    % look for subfolders
-    if nargout == 2
-        % get list of all 'subfolders'
-        tmp_ls = dir(pth);
-        dir_ls = char(tmp_ls([tmp_ls.isdir]).name);
-        % remove those starting with a '.'
-        dir_ls(strcmp(cellstr(dir_ls(:, 1)), '.'), :) = [];
-    end
-end
-
-function  m_file_ls = get_rec_file_ls(pth)
-    % this returns the list of .m files in designated folder as well as
-    % those from the sub-folders in a recursive way, which is not returned
-    % by the 'dir' command in older Matlab versions.
-
-    % start by get the current folder .m files and list of subfolders
-    [m_file_ls, dir_ls] = get_file_ls(pth);
-    n_subfs = size(dir_ls, 1);
-    
-    % check the subfolders
-    if n_subfs
-        for isubf = 1:n_subfs
-            pth_subf = fullfile(pth, deblank(dir_ls(isubf, :)));
-            m_file_lsubf = get_rec_file_ls(pth_subf);
-            m_file_ls = [m_file_ls; m_file_lsubf];
-        end
-    end
 end
