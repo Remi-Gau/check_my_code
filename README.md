@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3866174.svg)](https://doi.org/10.5281/zenodo.3866174)
-
+[![View check_my_code on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://nl.mathworks.com/matlabcentral/fileexchange/109294-check_my_code)
 # check_my_code
 
 How to keep your matlab code clean.
