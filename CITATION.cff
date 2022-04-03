@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+
+title: "check_my_code"
+
+version: 0.1.0
+
+abstract:
+  A single MATLAB function to highlight where most of the code cleaning should
+  happen.
+
+message:
+  "You probably do not want to use this and should use the miss_hit python
+  package instead."
+
+repository-code: "https://github.com/Remi-Gau/matlab_checkcode.git"
+
+identifiers:
+  - description: This is the collection of archived snapshots of all releases
+    value: "10.5281/zenodo.3866174"
+
+contact:
+  - affiliation: "Université catholique de Louvain"
+    email: remi.gau@uclouvain.be
+    family-names: Gau
+    given-names: Rémi
+
+authors:
+  - family-names: "Gau"
+    given-names: "Rémi"
+    orcid: "https://orcid.org/0000-0002-1535-9767"
+    affiliation: "Université catholique de Louvain"
+
+license: GPL-3.0
+
+keywords:
+  - code quality
+  - static code analysis
+  - MATLAB
