@@ -4,31 +4,6 @@
 
 # check_my_code
 
-How to keep your matlab code clean.
-
-- [check_my_code](#check_my_code)
-  - [Miss hit](#miss-hit)
-  - [Why this project?](#why-this-project)
-  - [McCabe complexity](#mccabe-complexity)
-  - [check_my_code](#check_my_code-1)
-    - [INPUTS](#inputs)
-      - [recursive](#recursive)
-      - [cplx_thrs](#cplx_thrs)
-      - [comment_thres](#comment_thres)
-      - [print_file](#print_file)
-    - [OUTPUTS](#outputs)
-      - [error_code](#error_code)
-      - [file_function](#file_function)
-      - [cplx](#cplx)
-      - [percentage_comment](#percentage_comment)
-  - [Installation](#installation)
-    - [Requirements](#requirements)
-    - [Direct download](#direct-download)
-    - [Git](#git)
-    - [MATLAB package manager](#matlab-package-manager)
-  - [Implementation detail](#implementation-detail)
-  - [Automation](#automation)
-
 **Do not use this matlab function**
 
 You should use miss_hit instead which has a lot more features and is actively maintained.
