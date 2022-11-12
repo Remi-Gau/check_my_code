@@ -1,11 +1,13 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3866174.svg)](https://doi.org/10.5281/zenodo.3866174)
 [![View check_my_code on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://nl.mathworks.com/matlabcentral/fileexchange/109294-check_my_code)
+
+
 # check_my_code
 
 How to keep your matlab code clean.
 
 - [check_my_code](#check_my_code)
-  - [What you should actually use...](#what-you-should-actually-use)
+  - [Miss hit](#miss-hit)
   - [Why this project?](#why-this-project)
   - [McCabe complexity](#mccabe-complexity)
   - [check_my_code](#check_my_code-1)
@@ -27,7 +29,14 @@ How to keep your matlab code clean.
   - [Implementation detail](#implementation-detail)
   - [Automation](#automation)
 
-## What you should actually use...
+**Do not use this matlab function**
+
+You should use miss_hit instead which has a lot more features and is actively maintained.
+
+If however for some reason that I don't quite understand you still wanted to use
+`check_my_code`, then please read on from [there](#why-this-project).
+
+## Miss hit
 
 If you have python installed.
 
@@ -52,9 +61,6 @@ he's doing.
 
 It also intregrates fairly well with [pre-commit](https://pre-commit.com/) to
 make sure you only commit clean code.
-
-If however for some reason that I don't quite understand you still wanted to use
-`check_my_code`, then please read on.
 
 ## Why this project?
 
