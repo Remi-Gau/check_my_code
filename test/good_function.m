@@ -1,4 +1,4 @@
-% (C) Copyright 2019 check_my_code developpers
+% (C) Copyright 2019 check_my_code developers
 
 function [] = good_function()
     % GOOD_FUNCTION

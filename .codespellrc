@@ -1,0 +1,4 @@
+[codespell]
+skip = *.git
+ignore-words-list = fo
+builtin = clear,rare

@@ -1,4 +1,4 @@
-% (C) Copyright 2019 check_my_code developpers
+% (C) Copyright 2019 check_my_code developers
 
 function varargout = check_my_code(RECURSIVE, CPLX_THRS, COMMENT_THRS, PRINT_FILE)
     % [error_code, file_function, cplx, percentage_comment] = check_my_code(...
@@ -46,10 +46,10 @@ function varargout = check_my_code(RECURSIVE, CPLX_THRS, COMMENT_THRS, PRINT_FIL
     %     used for automation for now. (default: true)
     %
     %
-    % ### OUPUTS
+    % ### OUTPUTS
     %
     % #### error_code
-    %    an array wth [cplx_error_code comment_error_code] where each value is 0 if there is no
+    %    an array with [cplx_error_code comment_error_code] where each value is 0 if there is no
     %    file that is too complex or has too few comments and is 1 otherwise
     %
     % #### file_function
@@ -296,7 +296,7 @@ end
 function comment_error_code = report_comments(m_file_ls, percentage_comment, COMMENT_THRS)
     % This reports on the percentage of comments in the file
     %
-    % We check what files have less comments thant the 2 threshold we have set
+    % We check what files have less comments than the 2 threshold we have set
     % and we throw a warning or an error depending on the threshold that has
     % been crossed
     %
@@ -341,7 +341,7 @@ end
 function cplx_error_code = report_cplx(cplx, file_function, CPLX_THRS)
     % this reports on the complexity in the files
     %
-    % We check what files have less comments thant the 2 threshold we have set
+    % We check what files have less comments than the 2 threshold we have set
     % and we throw a warning or an error depending on the threshold that has
     % been crossed.
     %

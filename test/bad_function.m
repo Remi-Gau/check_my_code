@@ -1,4 +1,4 @@
-% (C) Copyright 2019 check_my_code developpers
+% (C) Copyright 2019 check_my_code developers
 
 function [] = bad_function()
     % BAD_FUNCTION

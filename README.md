@@ -16,7 +16,7 @@ How to keep your matlab code clean.
       - [cplx_thrs](#cplx_thrs)
       - [comment_thres](#comment_thres)
       - [print_file](#print_file)
-    - [OUPUTS](#ouputs)
+    - [OUTPUTS](#outputs)
       - [error_code](#error_code)
       - [file_function](#file_function)
       - [cplx](#cplx)
@@ -59,7 +59,7 @@ It was created that by someone
 ([Florian Schanda](https://github.com/florianschanda)) who actually knows what
 he's doing.
 
-It also intregrates fairly well with [pre-commit](https://pre-commit.com/) to
+It also integrates fairly well with [pre-commit](https://pre-commit.com/) to
 make sure you only commit clean code.
 
 ## Why this project?
@@ -143,11 +143,11 @@ but acceptable and another that is too low. (default: `[20 10]`)
 BOOLEAN this will print a file with the overall error code ; mostly used for
 automation for now. (default: true)
 
-### OUPUTS
+### OUTPUTS
 
 #### error_code
 
-an array wth `[cplx_error_code comment_error_code]` where each value is 0 if
+an array with `[cplx_error_code comment_error_code]` where each value is 0 if
 there is no file that is too complex or has too few comments and is 1 otherwise
 
 #### file_function
