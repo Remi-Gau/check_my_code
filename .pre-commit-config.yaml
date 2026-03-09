@@ -1,40 +1,41 @@
 repos:
-
 - repo: local
-
   hooks:
-
   - id: mh_version
     name: mh_version
     entry: mh_style
-    args: [-v]
+    args:
+    - -v
     verbose: true
     language: python
-    additional_dependencies: [miss_hit_core]
-
+    additional_dependencies:
+    - miss_hit_core
   - id: mh_style
     name: mh_style
     entry: mh_style
-    args: [--process-slx, --fix]
+    args:
+    - --process-slx
+    - --fix
     files: ^(.*\.(m|slx))$
     language: python
-    additional_dependencies: [miss_hit_core]
-
+    additional_dependencies:
+    - miss_hit_core
   - id: mh_metric
     name: mh_metric
     entry: mh_metric
-    args: [--ci]
+    args:
+    - --ci
     files: ^(.*\.(m|slx))$
     language: python
-    additional_dependencies: [miss_hit_core]
-
+    additional_dependencies:
+    - miss_hit_core
   - id: mh_lint
     name: mh_lint
     entry: mh_lint
     files: ^(.*\.(m|slx))$
     language: python
-    additional_dependencies: [miss_hit]
-
+    additional_dependencies:
+    - miss_hit
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v6.0.0
   hooks:
@@ -42,3 +43,7 @@ repos:
   - id: end-of-file-fixer
   - id: check-yaml
   - id: check-added-large-files
+ci:
+  autoupdate_commit_msg: 'chore: update pre-commit hooks'
+  autoupdate_schedule: monthly
+  autofix_commit_msg: 'style: pre-commit fixes'
